@@ -30,6 +30,6 @@ Thanks:
 
 and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/MoveAngel/One4uBot/graphs/contributors).
 
-## License
+##  License
 
 This userbot licensed on [Raphielscape Public License](https://github.com/MoveAngel/One4uBot/blob/sql-extended/LICENSE) - Version 1.d, February 2020
