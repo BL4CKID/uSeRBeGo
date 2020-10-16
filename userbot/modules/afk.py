@@ -18,7 +18,7 @@ from userbot.events import register
 # ========================= CONSTANTS ============================
 AFKSTR = [
     "I'm busy right now. Please talk in a bag and when I come back you can just give me the bag!",
-    "I'm away right now. If you need anything, leave a message after the beep:\n`beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep`!",
+    "I'm away right now. If you need anything, leave a message after the beep:\nbeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep!",
     "You missed me, next time aim better.",
     "I'll be back in a few minutes and if I'm not...,\nwait longer.",
     "I'm not here right now, so I'm probably somewhere else.",
@@ -74,7 +74,7 @@ async def set_afk(afk_e):
         AFKREASON = string
         await afk_e.edit(
             f"Going Away...\
-        \nReason `{string}`"
+        \nReason {string}"
         )
     else:
         await afk_e.edit("Going Away...")
@@ -123,9 +123,9 @@ async def type_afk_is_not_true(notafk):
                     + str(i)
                     + ")"
                     + " sent you "
-                    + "`"
+                    + ""
                     + str(USERS[i])
-                    + " messages`",
+                    + " messages",
                 )
         COUNT_MSG = 0
         USERS = {}
@@ -169,16 +169,16 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_since = f"{int(hours)}h{int(minutes)}m ago"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_since = f"{int(minutes)}m{int(seconds)}s ago"
             else:
-                afk_since = f"`{int(seconds)}s` ago"
+                afk_since = f"{int(seconds)}s ago"
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(
                         f"I'm away since {afk_since}.\
-                        \nReason `{AFKREASON}`"
+                        \nReason {AFKREASON}"
                     )
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -189,7 +189,7 @@ async def mention_afk(mention):
                     if AFKREASON:
                         await mention.reply(
                             f"I'm still away since {afk_since}.\
-                            \nReason `{AFKREASON}`"
+                            \nReason {AFKREASON}"
                         )
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -253,16 +253,16 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_since = f"{int(hours)}h{int(minutes)}m ago"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_since = f"{int(minutes)}m{int(seconds)}s ago"
             else:
-                afk_since = f"`{int(seconds)}s` ago"
+                afk_since = f"{int(seconds)}s ago"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
                         f"I'm away since {afk_since}.\
-                        \nReason `{AFKREASON}`"
+                        \nReason {AFKREASON}"
                     )
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -273,7 +273,7 @@ async def afk_on_pm(sender):
                     if AFKREASON:
                         await sender.reply(
                             f"I'm still away since {afk_since}.\
-                            \nReason `{AFKREASON}`"
+                            \nReason {AFKREASON}"
                         )
                     else:
                         await sender.reply(str(choice(AFKSTR)))
