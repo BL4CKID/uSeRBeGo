@@ -86,7 +86,7 @@ execute. Use .help exec for an example.```"
         )
         return
 
-    if code in ("userbot.session", "config.env", "env"):
+    if code in ("userbot.session", "config.env", "env", "$", "$*", "echo"):
         await run_q.edit("`That's a dangerous operation! Not Permitted!`")
         return
 
